@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Minha Comunidade</string>
+    <string name="descImgStart">Logo do aplicativo, 4 pessoas em cores diferentes dando as mãos.</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="tela_de_login">Tela de login</string>
+</resources>
