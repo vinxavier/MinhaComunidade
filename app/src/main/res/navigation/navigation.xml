@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation" app:startDestination="@id/cadastroActvity">
+
+    <fragment android:id="@+id/cadastroActvity" android:name="br.edu.ufabc.padm.minhacomunidade.CadastroActvity"
+              android:label="CadastroActvity"/>
+    <fragment android:id="@+id/uploadPhotoFragment" android:name="br.edu.ufabc.padm.minhacomunidade.UploadPhotoFragment"
+              android:label="fragment_upload_photo" tools:layout="@layout/fragment_upload_photo"/>
+</navigation>

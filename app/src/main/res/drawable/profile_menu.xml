@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4166 2.91666H8.74998C7.13915 2.91666 5.83331 4.22249 5.83331 5.83332V29.1667C5.83331 30.7775 7.13915 32.0833 8.74998 32.0833H26.25C27.8608 32.0833 29.1666 30.7775 29.1666 29.1667V11.6667L20.4166 2.91666Z" stroke="white" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.4167 2.91666V11.6667H29.1667" stroke="white" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23.3334 18.9583H11.6667" stroke="white" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23.3334 24.7917H11.6667" stroke="white" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.5834 13.125H13.125H11.6667" stroke="white" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</selector>

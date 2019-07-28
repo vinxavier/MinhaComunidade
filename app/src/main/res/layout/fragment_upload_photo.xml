@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".UploadPhotoFragment" android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@color/colorPrimaryLight">
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_user"
+            app:civ_border_width="4dp"
+            app:civ_shadow_radius="10"
+            app:civ_shadow_color="#000000"
+            app:civ_circle_color="#B1B1B1" app:civ_border_color="#B1B1B1" app:civ_border="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp" android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/profile_picture" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0.2" app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.5"/>
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_cameraadd"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#000000"
+            android:id="@+id/camera_button"
+            android:layout_alignEnd="@+id/profile_picture"
+            android:layout_alignStart="@+id/profile_picture"
+            android:layout_alignBottom="@+id/profile_picture" android:layout_alignTop="@+id/profile_picture"
+            app:layout_constraintEnd_toEndOf="@+id/profile_picture"
+            app:layout_constraintTop_toTopOf="@+id/profile_picture"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_picture"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="1.0"/>
+    <TextView
+            android:text="@string/add_foto_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:textSize="30sp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="8dp"
+            android:background="@color/colorAccent" android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.110000014"/>
+    <Button android:id="@+id/login_btn" android:layout_width="300dp" android:layout_height="wrap_content"
+            android:text="@string/salvar"
+            android:background="@color/primaryTextColor"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.279" app:layout_constraintHorizontal_bias="0.504"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/profile_picture"/>
+
+    <Button android:id="@+id/cadastro_btn" android:layout_width="300dp" android:layout_height="wrap_content"
+            android:text="@string/pular"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintVertical_bias="0.609" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_picture"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
