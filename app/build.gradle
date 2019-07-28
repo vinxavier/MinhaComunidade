@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.0.1'
 
     // Material Design
-    implementation "com.google.android.material:material"
+    implementation "com.google.android.material:material:1.0.0"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
 
