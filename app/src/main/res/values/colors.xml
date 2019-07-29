@@ -5,4 +5,9 @@
   <color name="colorPrimaryDark">#c74449</color>
   <color name="primaryTextColor">#ffffff</color>
   <color name="colorAccent">#ffffff</color>
+  <color name="transparent">#00000000</color>
+  <color name="light_gray">#999999</color>
+  <color name="base_green">#2C8686</color>
+
+
 </resources>

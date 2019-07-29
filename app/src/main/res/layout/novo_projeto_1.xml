@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText android:id="@+id/tituloProjeto"
+              android:layout_width="match_parent"
+              android:hint="@string/titulo_projeto"
+              android:textAlignment="center"
+              android:layout_height="wrap_content"
+              android:padding="10dp"
+              android:layout_marginTop="10dp"
+              android:inputType="text" android:textStyle="bold" android:textSize="20sp"
+    />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+            android:gravity="center" android:layout_marginTop="10dp">
+        <TextView android:text="@string/grupos"
+                  android:textAlignment="textEnd"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:textSize="18sp"/>
+        <Space android:layout_width="10dp" android:layout_height="match_parent"/>
+
+        <Spinner android:id="@+id/selecionar_grupo"
+                android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:autofillHints="@string/selecionar_grupo"
+                 android:padding="10dp"
+                />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+                  android:gravity="center" android:layout_marginTop="10dp">
+        <TextView android:text="@string/tags"
+                  android:textAlignment="textEnd"
+                  android:layout_width="wrap_content"
+                  android:layout_marginStart="5dp"
+                  android:layout_height="wrap_content" android:textSize="18sp"/>
+        <Space android:layout_width="10dp" android:layout_height="match_parent"/>
+        <EditText android:id="@+id/selecionar_tag"
+                  android:hint="#Limpeza #Ajuda #EventoBeneficente #Pintura #Aulas..."
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:singleLine="true" android:ellipsize="end"
+                  android:padding="10dp"
+                  android:layout_marginEnd="5dp"
+        android:inputType="text"/>
+    </LinearLayout>
+
+    <TextView android:text="@string/local"
+              android:textAlignment="textStart"
+              android:layout_width="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginStart="5dp"
+              android:layout_marginBottom="0dp"
+              android:layout_height="wrap_content" android:textSize="18sp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Space android:layout_width="40dp" android:layout_height="wrap_content"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                           android:layout_height="wrap_content"
+                                           android:padding="10dp"
+                                           android:layout_marginEnd="5dp">
+            <fragment android:id="@+id/local_autocomplete_fragment"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+    android:padding="5dp" android:gravity="center" android:layout_marginTop="10dp">
+        <TextView android:text="Quando?" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_alignParentLeft="true"
+                  android:textAlignment="textEnd"
+                  android:padding="8dp" android:textSize="18sp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:hint="Data do Evento"
+                android:ems="10"
+                android:id="@+id/data_event" android:textSize="18sp"/>
+        <ImageButton
+                android:id="@+id/data_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/ic_date_24dp"
+            android:background="@color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+                  android:padding="5dp" android:gravity="center" android:layout_marginTop="10dp">
+        <TextView android:text="@string/voluntarios_necessarios"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:textSize="18sp"/>
+        <ImageButton
+                android:id="@+id/menus_vol_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/ic_minus"
+                android:background="@color/transparent"/>
+        <EditText android:id="@+id/minVol"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:textAlignment="center"
+                  android:inputType="number" android:text="0"/>
+        <ImageButton
+                android:id="@+id/plus_vol_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_circle_24dp"
+                android:background="@color/transparent"/>
+    </LinearLayout>
+
+    <Space android:layout_width="match_parent" android:layout_height="40dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:padding="5dp"
+                  android:gravity="center"
+                  android:layout_marginTop="10dp"
+    >
+
+        <Button android:id="@+id/cancel_button"
+                android:background="@color/light_gray"
+                android:drawableLeft="@drawable/ic_cancel"
+                android:padding="5dp"
+                android:textColor="@color/primaryTextColor" android:text="@string/cancelar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Space android:layout_width="40dp" android:layout_height="match_parent"/>
+        <Button android:id="@+id/confirm_button"
+                android:padding="5dp"
+                android:background="@color/base_green"
+                android:drawableLeft="@drawable/ic_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryTextColor"
+                android:text="@string/confirmar"
+        />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

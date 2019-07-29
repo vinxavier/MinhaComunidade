@@ -24,6 +24,8 @@
         <activity android:name=".FeedActivity"
                   android:label="@string/feed">
         </activity>
+        <activity android:name=".NovoProjeto1Activity"
+                  android:label="@string/novo_projeto"/>
     </application>
 
 </manifest>
