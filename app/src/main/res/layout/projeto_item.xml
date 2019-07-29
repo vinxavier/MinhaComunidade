@@ -1,76 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:paddingBottom="0dp"
+                    >
+
+
+        <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp">
+                android:layout_height="150dp" tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:id="@+id/projectImage" android:layout_marginEnd="0dp"
+                android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="0dp"
+                android:scaleType="centerCrop"/>
 
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp" android:src="@drawable/dark_transparent_rectangle"
+                android:id="@+id/recOverLayerImage" android:layout_marginEnd="0dp"
+                android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="0dp"
+                android:scaleType="centerCrop"/>
 
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp" tools:srcCompat="@tools:sample/backgrounds/scenic"
-            android:id="@+id/projectImage" android:layout_marginEnd="0dp"
-            android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="0dp"
-            android:scaleType="centerCrop"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tituloProjeto"
+                android:layout_marginStart="12dp"
+                android:layout_alignStart="@+id/projectImage" android:layout_alignTop="@+id/projectImage"
+                android:layout_marginTop="19dp" android:textSize="20sp" android:layout_marginEnd="18dp"
+                android:layout_alignEnd="@+id/projectImage"/>
+        <TextView
+                android:text="13/04/23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/dataProjeto"
+                android:layout_marginStart="34dp"
+                android:layout_alignStart="@+id/projectImage" android:layout_marginTop="60dp"
+                android:layout_below="@+id/tituloProjeto" android:textSize="14sp"
+                android:layout_marginEnd="0dp" android:layout_alignEnd="@+id/projectImage"/>
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="95dp"
+                android:layout_height="75dp"
+                android:id="@+id/minVol" android:layout_marginBottom="10dp"
+                android:layout_marginStart="0dp" android:layout_marginEnd="0dp"
+                android:layout_alignEnd="@+id/projectImage" android:layout_alignBottom="@+id/projectImage"
+                android:max="100" android:progress="30"
+                android:progressDrawable="@drawable/circular" android:progressTint="@color/colorPrimaryDark"
+                android:indeterminateBehavior="cycle" android:indeterminateOnly="false"
+                android:padding="0dp"
+                android:layout_marginTop="0dp" android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+        <TextView
+                android:text="Pessoas:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/progressLabel" android:layout_marginEnd="21dp"
+                android:layout_alignEnd="@+id/projectImage"
+                android:layout_above="@+id/minVol" android:layout_marginBottom="-14dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/prcLabel"
+                android:layout_alignBottom="@+id/minVol"
+                android:layout_alignStart="@+id/minVol"
+                android:layout_alignEnd="@+id/minVol"
+                android:layout_alignTop="@+id/minVol"
+                android:textAlignment="center"
+                android:gravity="center"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/currPeople" android:layout_marginBottom="1dp"
+                android:layout_alignBottom="@+id/prcLabel" android:layout_marginEnd="18dp"
+                android:layout_alignEnd="@+id/prcLabel" android:layout_marginStart="18dp"
+                android:layout_alignStart="@+id/prcLabel"
+                android:textAlignment="center"
+                android:gravity="center"/>
+    </RelativeLayout>
 
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp" android:src="@drawable/dark_transparent_rectangle"
-            android:id="@+id/recOverLayerImage" android:layout_marginEnd="0dp"
-            android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="0dp"
-            android:scaleType="centerCrop"/>
-
-    <TextView
-            android:text="TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tituloProjeto"
-            android:layout_marginStart="12dp"
-            android:layout_alignStart="@+id/projectImage" android:layout_alignTop="@+id/projectImage"
-            android:layout_marginTop="19dp" android:textSize="20sp" android:layout_marginEnd="18dp"
-            android:layout_alignEnd="@+id/projectImage"/>
-    <TextView
-            android:text="13/04/23"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/dataProjeto"
-            android:layout_marginStart="34dp"
-            android:layout_alignStart="@+id/projectImage" android:layout_marginTop="60dp"
-            android:layout_below="@+id/tituloProjeto" android:textSize="14sp"
-            android:layout_marginEnd="0dp" android:layout_alignEnd="@+id/projectImage"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="95dp"
-            android:layout_height="75dp"
-            android:id="@+id/minVol" android:layout_marginBottom="0dp"
-            android:layout_marginStart="0dp" android:layout_marginEnd="0dp"
-            android:layout_alignEnd="@+id/projectImage" android:layout_alignBottom="@+id/projectImage"
-            android:max="100" android:progress="30"
-            android:progressDrawable="@drawable/circular" android:progressTint="@color/colorPrimaryDark"
-            android:indeterminateBehavior="cycle" android:indeterminateOnly="false"
-            android:padding="0dp"
-            android:layout_marginTop="0dp" android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"/>
-    <TextView
-            android:text="Pessoas:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/progressLabel" android:layout_marginEnd="21dp"
-            android:layout_alignEnd="@+id/projectImage"
-            android:layout_above="@+id/minVol" android:layout_marginBottom="-14dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/prcLabel"
-            android:layout_alignBottom="@+id/minVol"
-            android:layout_alignStart="@+id/minVol"
-            android:layout_alignEnd="@+id/minVol"
-            android:layout_alignTop="@+id/minVol"
-            android:textAlignment="center"
-            android:gravity="center"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/currPeople" android:layout_marginBottom="1dp"
-            android:layout_alignBottom="@+id/prcLabel" android:layout_marginEnd="18dp"
-            android:layout_alignEnd="@+id/prcLabel" android:layout_marginStart="18dp"
-            android:layout_alignStart="@+id/prcLabel"
-            android:textAlignment="center"
-            android:gravity="center"/>
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

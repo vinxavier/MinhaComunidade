@@ -6,10 +6,15 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class FeedActivity:AppCompatActivity() {
 
-    private lateinit var listView: ListView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,15 +23,23 @@ class FeedActivity:AppCompatActivity() {
     }
 
     private fun populateProjetos() {
-        listView = findViewById(R.id.list_projetos)
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = ProjetoAdapter()
 
-        listView.adapter = ProjetoAdapter()
+        recyclerView = findViewById<RecyclerView>(R.id.recycle_projetos).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = viewManager
+
+            // specify an viewAdapter (see also next example)
+            adapter = viewAdapter
+
+        }
+
 
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        (listView.adapter as BaseAdapter).notifyDataSetChanged()
-    }
 }
