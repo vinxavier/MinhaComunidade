@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.735" app:layout_constraintHorizontal_bias="0.504"/>
 
-    <Button android:id="@+id/cadastro_btn" android:layout_width="300dp" android:layout_height="wrap_content"
+    <Button android:id="@+id/pular_btn" android:layout_width="300dp" android:layout_height="wrap_content"
             android:text="@string/cadastrar"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/primaryTextColor"

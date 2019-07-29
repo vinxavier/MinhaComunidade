@@ -16,4 +16,10 @@
     <string name="salvar">Salvar</string>
     <string name="feed">Feed</string>
     <string name="buscar">Buscar projetos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slecao_grupos_titulo">Selecione seus grupos:</string>
+    <string name="selecao_grupos_descricao">Lorem ipsum sit dolor amet</string>
+    <string name="finalizar">Finalizar</string>
 </resources>

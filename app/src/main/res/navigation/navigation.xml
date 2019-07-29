@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation" app:startDestination="@id/cadastroActvity">
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/cadastroBasicoFragment">
 
-    <fragment android:id="@+id/cadastroActvity" android:name="br.edu.ufabc.padm.minhacomunidade.CadastroActvity"
-              android:label="CadastroActvity"/>
-    <fragment android:id="@+id/uploadPhotoFragment" android:name="br.edu.ufabc.padm.minhacomunidade.UploadPhotoFragment"
-              android:label="fragment_upload_photo" tools:layout="@layout/fragment_upload_photo"/>
+    <fragment android:id="@+id/uploadPhotoFragment" android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.UploadPhotoFragment"
+              android:label="fragment_upload_photo" tools:layout="@layout/fragment_upload_photo">
+        <action android:id="@+id/action_uploadPhotoFragment_to_cadastroGruposFragment"
+                app:destination="@id/cadastroGruposFragment" app:popUpTo="@+id/uploadPhotoFragment"
+                app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment android:id="@+id/cadastroBasicoFragment"
+              android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.CadastroBasicoFragment"
+              android:label="cadastro_basico_fragment" tools:layout="@layout/cadastro_basico_fragment">
+        <action android:id="@+id/action_cadastroBasicoFragment_to_uploadPhotoFragment"
+                app:destination="@id/uploadPhotoFragment" app:popUpTo="@+id/cadastroBasicoFragment"
+                app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment android:id="@+id/cadastroGruposFragment"
+              android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.CadastroGruposFragment"
+              android:label="fragment_cadastro_grupos" tools:layout="@layout/fragment_cadastro_grupos">
+        <action android:id="@+id/action_cadastroGruposFragment_to_feedActivity" app:destination="@id/feedActivity"/>
+    </fragment>
+    <activity android:id="@+id/feedActivity" android:name="br.edu.ufabc.padm.minhacomunidade.FeedActivity"
+              android:label="feed_activity" tools:layout="@layout/feed_activity"/>
 </navigation>
