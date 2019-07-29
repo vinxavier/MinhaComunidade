@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".App">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyC1oop6vb7GtXqcQbw4-FIdp5DU2GCt1FM"/>
         <activity android:name=".MainActivity"
                     android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -26,6 +27,9 @@
         </activity>
         <activity android:name=".NovoProjeto1Activity"
                   android:label="@string/novo_projeto"/>
+        <activity android:name=".NovoProjeto2Activity"
+                  android:label="@string/carregar_imagens_projeto"/>
+
     </application>
 
 </manifest>
