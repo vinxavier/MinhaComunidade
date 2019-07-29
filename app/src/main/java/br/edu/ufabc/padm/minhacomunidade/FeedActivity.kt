@@ -2,23 +2,28 @@ package br.edu.ufabc.padm.minhacomunidade
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.ActionMode
+import android.view.Menu
 import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FeedActivity:AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var addButton: FloatingActionButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.feed_activity)
+        addButton = findViewById(R.id.addButton)
         populateProjetos()
     }
 
@@ -40,6 +45,21 @@ class FeedActivity:AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        addButton.setOnClickListener{
+            val intent = Intent(this, NovoProjeto1Activity::class.java)
+
+            startActivity(intent)
+        }
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.feed_menu, menu)
+        return true
     }
 
 }

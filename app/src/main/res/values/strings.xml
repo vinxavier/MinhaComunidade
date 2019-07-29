@@ -22,4 +22,15 @@
     <string name="slecao_grupos_titulo">Selecione seus grupos:</string>
     <string name="selecao_grupos_descricao">Lorem ipsum sit dolor amet</string>
     <string name="finalizar">Finalizar</string>
+    <string name="acessar_perfil">Acessar o perfil</string>
+    <string name="meus_projetos">Meus Projetos</string>
+    <string name="titulo_projeto">Título do projeto</string>
+    <string name="selecionar_grupo">Selecione um grupo</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="voluntarios_necessarios">Voluntários necessários:</string>
+    <string name="grupos">Grupos:</string>
+    <string name="novo_projeto">Novo Projeto</string>
+    <string name="tags">Tags:</string>
+    <string name="local">Local:</string>
 </resources>
