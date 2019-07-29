@@ -8,4 +8,6 @@
     <string name="tela_de_login">Tela de login</string>
     <string name="feed">Feed</string>
     <string name="buscar">Buscar projetos</string>
+    <string name="acessar_perfil">Acessar o perfil</string>
+    <string name="meus_projetos">Meus Projetos</string>
 </resources>
