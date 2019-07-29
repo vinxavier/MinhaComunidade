@@ -8,4 +8,13 @@
           android:title="@string/buscar"
           yourapp:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/action_perfil"
+          android:icon="@drawable/ic_action_perfil"
+          android:title="@string/acessar_perfil"
+          yourapp:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_meus_projetos"
+          android:title="@string/meus_projetos"
+          yourapp:showAsAction="never"/>
+
 </menu>

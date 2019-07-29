@@ -2,6 +2,8 @@ package br.edu.ufabc.padm.minhacomunidade
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.ActionMode
+import android.view.Menu
 import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
@@ -40,6 +42,11 @@ class FeedActivity:AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.feed_menu, menu)
+        return true
     }
 
 }
