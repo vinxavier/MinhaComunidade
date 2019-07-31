@@ -36,12 +36,12 @@ class NovoProjeto1Activity: AppCompatActivity() {
     override fun onResume(){
         super.onResume()
         // Set up a PlaceSelectionListener to handle the response.
-        autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
-            override fun onPlaceSelected(place: Place) {
+        //autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+          //  override fun onPlaceSelected(place: Place) {
                 // TODO: Get info about the selected place.
             }
 
-        })
-    }
+        //})
+   // }
 
 }

@@ -4,8 +4,9 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
             app:startDestination="@id/cadastroBasicoFragment">
 
-    <fragment android:id="@+id/uploadPhotoFragment" android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.UploadPhotoFragment"
-              android:label="fragment_upload_photo" tools:layout="@layout/fragment_upload_photo">
+    <fragment android:id="@+id/uploadPhotoFragment"
+              android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.CadastroFotoFragment"
+              android:label="fragment_upload_photo">
         <action android:id="@+id/action_uploadPhotoFragment_to_cadastroGruposFragment"
                 app:destination="@id/cadastroGruposFragment" app:popUpTo="@+id/uploadPhotoFragment"
                 app:popUpToInclusive="true"/>
@@ -19,9 +20,12 @@
     </fragment>
     <fragment android:id="@+id/cadastroGruposFragment"
               android:name="br.edu.ufabc.padm.minhacomunidade.Cadastro.CadastroGruposFragment"
-              android:label="fragment_cadastro_grupos" tools:layout="@layout/fragment_cadastro_grupos">
-        <action android:id="@+id/action_cadastroGruposFragment_to_feedActivity" app:destination="@id/feedActivity"/>
+              android:label="fragment_cadastro_grupos" tools:layout="@layout/cadastro_grupos_fragment">
+        <action android:id="@+id/action_cadastroGruposFragment_to_feedActivity" app:destination="@id/feedActivity"
+                app:popUpTo="@+id/loginActivity" app:popUpToInclusive="false"/>
     </fragment>
     <activity android:id="@+id/feedActivity" android:name="br.edu.ufabc.padm.minhacomunidade.FeedActivity"
               android:label="feed_activity" tools:layout="@layout/feed_activity"/>
+    <activity android:id="@+id/loginActivity" android:name="br.edu.ufabc.padm.minhacomunidade.LoginActivity"
+              android:label="LoginActivity"/>
 </navigation>

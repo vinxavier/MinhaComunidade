@@ -7,27 +7,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import br.edu.ufabc.padm.minhacomunidade.R
+import br.edu.ufabc.padm.minhacomunidade.databinding.CadastroBasicoFragmentBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class CadastroBasicoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return TextView(activity).apply {
-            setText(R.string.hello_blank_fragment)
+
+        val binding = DataBindingUtil.inflate<CadastroBasicoFragmentBinding>(inflater, R.layout.cadastro_basico_fragment, container, false)
+
+
+        binding.buttonProximo.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        {view: View ->
+            view.findNavController().navigate(CadastroBasicoFragmentDirections.action_cadastroBasicoFragment_to_uploadPhotoFragment())
+        }
+        return binding.root
         }
     }
 
 
-}
+
