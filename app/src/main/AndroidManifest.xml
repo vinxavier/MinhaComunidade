@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".App">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyC1oop6vb7GtXqcQbw4-FIdp5DU2GCt1FM"/>
         <activity android:name=".MainActivity"
                     android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -29,6 +30,9 @@
 
         <activity android:name=".Cadastro.CadastroActvity"
                   android:label="Tela de cadastro"/>
+        <activity android:name=".NovoProjeto2Activity"
+                  android:label="@string/carregar_imagens_projeto"/>
+
     </application>
 
 </manifest>
