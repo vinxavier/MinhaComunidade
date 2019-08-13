@@ -2,10 +2,10 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-<androidx.constraintlayout.widget.ConstraintLayout  xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   tools:context=".Cadastro.UploadPhotoFragment" android:backgroundTint="@color/colorPrimaryLight"
+                                                   tools:context=".view.Cadastro.UploadPhotoFragment" android:backgroundTint="@color/colorPrimaryLight"
                                                    android:background="@color/colorPrimaryLight">
     <TextView
             android:text="@string/add_foto_perfil"

@@ -1,15 +1,12 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.ActionMode
 import android.view.Menu
-import android.widget.AdapterView
-import android.widget.BaseAdapter
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.ufabc.padm.minhacomunidade.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FeedActivity:AppCompatActivity() {

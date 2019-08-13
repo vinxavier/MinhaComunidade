@@ -1,4 +1,4 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
 
 import android.os.Bundle

@@ -1,10 +1,11 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import br.edu.ufabc.padm.minhacomunidade.Cadastro.CadastroActvity
+import br.edu.ufabc.padm.minhacomunidade.view.Cadastro.CadastroActvity
+import br.edu.ufabc.padm.minhacomunidade.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         loginBtn.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         cadastroBtn.setOnClickListener{

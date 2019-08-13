@@ -1,13 +1,11 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
-import java.util.*
+import br.edu.ufabc.padm.minhacomunidade.R
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.places.Place
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment
@@ -53,11 +51,11 @@ class NovoProjeto1Activity: AppCompatActivity(),PlaceSelectionListener {
         super.onResume()
 
         confirmBtn.setOnClickListener {
-            startActivity(Intent(this,NovoProjeto2Activity::class.java))
+            startActivity(Intent(this, NovoProjeto2Activity::class.java))
         }
 
         cancelBtn.setOnClickListener {
-            startActivity(Intent(this,FeedActivity::class.java))
+            startActivity(Intent(this, FeedActivity::class.java))
         }
 
     }

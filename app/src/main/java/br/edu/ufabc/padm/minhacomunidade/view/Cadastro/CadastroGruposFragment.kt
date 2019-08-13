@@ -1,7 +1,5 @@
-package br.edu.ufabc.padm.minhacomunidade.Cadastro
+package br.edu.ufabc.padm.minhacomunidade.view.Cadastro
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.databinding.CadastroGruposFragmentBinding
 import br.edu.ufabc.padm.minhacomunidade.model.entity.Grupo
-import android.widget.ArrayAdapter
 import androidx.navigation.findNavController
 
 

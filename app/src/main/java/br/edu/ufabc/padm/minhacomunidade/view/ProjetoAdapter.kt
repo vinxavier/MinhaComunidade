@@ -1,15 +1,13 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ProgressBar
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.model.dao.ProjetoDAO
 
 class ProjetoAdapter : RecyclerView.Adapter<ProjetoAdapter.ProjetoHolder>() {
@@ -27,7 +25,7 @@ class ProjetoAdapter : RecyclerView.Adapter<ProjetoAdapter.ProjetoHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): ProjetoAdapter.ProjetoHolder {
+                                    viewType: Int): ProjetoHolder {
         // create a new view
         val projView = LayoutInflater.from(parent.context)
             .inflate(R.layout.projeto_item, parent, false) as CardView
