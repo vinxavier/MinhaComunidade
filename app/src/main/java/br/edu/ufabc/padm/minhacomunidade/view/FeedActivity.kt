@@ -3,11 +3,13 @@ package br.edu.ufabc.padm.minhacomunidade.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufabc.padm.minhacomunidade.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 
 class FeedActivity:AppCompatActivity() {
 
@@ -57,6 +59,18 @@ class FeedActivity:AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.feed_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.log_out_action) {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
