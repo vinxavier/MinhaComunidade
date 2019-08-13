@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <ImageView android:layout_width="150dp" android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_round_app_icon"
-               android:scaleType="centerCrop"  android:id="@+id/StartIcon"
+    <ImageView android:layout_width="150dp" android:layout_height="150dp" android:src="@drawable/ic_round_app_icon"
+               app:srcCompat="@drawable/ic_round_app_icon"
+               android:scaleType="centerCrop" android:id="@+id/StartIcon"
                android:contentDescription="@string/descImgStart"
                android:layout_marginTop="60dp"
                android:layout_gravity="center"
-    />
+               tools:visibility="visible" tools:srcCompat="@drawable/ic_round_app_icon"/>
 
     <EditText android:id="@+id/email_entry"
               android:hint="@string/email"
@@ -41,5 +41,12 @@
             android:padding="5dp"
             android:layout_marginTop="60dp"
             android:textAlignment="center" android:layout_gravity="center"/>
+
+    <Button android:id="@+id/esqueceu_senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/esqueceu_senha"
+            android:layout_gravity="center"/>
 
 </LinearLayout>

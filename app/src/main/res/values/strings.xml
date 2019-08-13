@@ -39,4 +39,8 @@
     <string name="enter_valid_email">Por favor entre com um e-mail válido</string>
     <string name="enter_password">Por favor entre com sua senha</string>
     <string name="auth_failed">Falha na autenticação</string>
+    <string name="esqueceu_senha">Esqueceu a senha?</string>
+    <string name="reset_senha">Resetar</string>
+    <string name="email_enviado">Email para resetar a senha enviado.</string>
+    <string name="sair">Sair</string>
 </resources>
