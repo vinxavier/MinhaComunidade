@@ -6,8 +6,22 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="tela_de_login">Tela de login</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="cidade">Cidade</string>
+    <string name="proximo">Próximo</string>
+
+    <string name="add_foto_perfil">Foto de perfil</string>
+    <string name="pular">Pular</string>
+    <string name="salvar">Salvar</string>
     <string name="feed">Feed</string>
     <string name="buscar">Buscar projetos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slecao_grupos_titulo">Selecione seus grupos:</string>
+    <string name="selecao_grupos_descricao">Lorem ipsum sit dolor amet</string>
+    <string name="finalizar">Finalizar</string>
     <string name="acessar_perfil">Acessar o perfil</string>
     <string name="meus_projetos">Meus Projetos</string>
     <string name="titulo_projeto">Título do projeto</string>

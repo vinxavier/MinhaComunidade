@@ -1,5 +1,6 @@
 package br.edu.ufabc.padm.minhacomunidade.model.dao
 
+import br.edu.ufabc.padm.minhacomunidade.model.entity.Grupo
 import br.edu.ufabc.padm.minhacomunidade.model.entity.Projeto
 import java.util.ArrayList
 
@@ -20,7 +21,7 @@ object ProjetoDAO{
         p.descricao = "Iremos pintar o muro"
         p.endr = "Rua José Fernandes, 453"
         p.dataEvent = "25/03/2019"
-        p.grupo = "ABC"
+        p.grupo = Grupo("ABC")
         p.tag = "#comunidade"
         p.minVol = 10
         p.vol = 6
@@ -34,7 +35,7 @@ object ProjetoDAO{
         p.descricao = "Iremos fazer a instalação de lixeiras"
         p.endr = "Rua Pitô Fagundes, 43"
         p.dataEvent = "10/03/2019"
-        p.grupo = "ABC"
+        p.grupo = Grupo("ABC")
         p.tag = "#comunidade"
         p.minVol = 10
         p.vol = 2

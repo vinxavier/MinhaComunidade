@@ -27,6 +27,9 @@
         </activity>
         <activity android:name=".NovoProjeto1Activity"
                   android:label="@string/novo_projeto"/>
+
+        <activity android:name=".Cadastro.CadastroActvity"
+                  android:label="Tela de cadastro"/>
         <activity android:name=".NovoProjeto2Activity"
                   android:label="@string/carregar_imagens_projeto"/>
 
