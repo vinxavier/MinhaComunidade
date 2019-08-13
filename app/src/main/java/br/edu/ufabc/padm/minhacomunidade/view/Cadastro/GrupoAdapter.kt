@@ -1,4 +1,4 @@
-package br.edu.ufabc.padm.minhacomunidade.Cadastro
+package br.edu.ufabc.padm.minhacomunidade.view.Cadastro
 
 import android.content.Context
 import android.view.LayoutInflater

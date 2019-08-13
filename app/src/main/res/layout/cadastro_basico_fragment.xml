@@ -7,7 +7,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@color/colorPrimaryLight"
-              tools:context=".Cadastro.CadastroBasicoFragment">
+              tools:context=".view.Cadastro.CadastroBasicoFragment">
 
     <EditText
             android:id="@+id/email_cadastro"
@@ -35,6 +35,7 @@
 
     <EditText
             android:id="@+id/senha_cadastro"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/senha"
@@ -48,6 +49,7 @@
             android:id="@+id/telefone_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="phone"
             android:hint="@string/telefone"
             android:textSize="20sp"
             android:layout_marginTop="40dp"

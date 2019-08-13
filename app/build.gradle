@@ -43,6 +43,14 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //firebase
+    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation "com.google.firebase:firebase-common-ktx:18.0.0"
+    implementation 'com.google.firebase:firebase-firestore-ktx:20.2.0'
+    implementation 'com.google.firebase:firebase-database:18.0.1'
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+
+
     // Core
     implementation "androidx.core:core:1.0.2"
 
@@ -57,7 +65,9 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
-    implementation "com.google.android.libraries.places:places:1.1.0"
+    //implementation "com.google.android.libraries.places:places:1.1.0"
 
     implementation 'com.google.android.gms:play-services-places:11.8.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

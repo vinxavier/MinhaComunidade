@@ -35,5 +35,8 @@
     <string name="local">Local:</string>
     <string name="carregar_imagens_projeto">Carregar imagens do projeto</string>
     <string name="carregar_imagens">Carregar Imagens</string>
-    <string name="pular">Pular</string>
+    <string name="enter_email">Por favor entre com um e-mail</string>
+    <string name="enter_valid_email">Por favor entre com um e-mail válido</string>
+    <string name="enter_password">Por favor entre com sua senha</string>
+    <string name="auth_failed">Falha na autenticação</string>
 </resources>

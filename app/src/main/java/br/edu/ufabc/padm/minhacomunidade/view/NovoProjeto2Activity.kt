@@ -1,7 +1,8 @@
-package br.edu.ufabc.padm.minhacomunidade
+package br.edu.ufabc.padm.minhacomunidade.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.edu.ufabc.padm.minhacomunidade.R
 
 class NovoProjeto2Activity: AppCompatActivity() {
 

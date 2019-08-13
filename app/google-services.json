@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "76648692680",
+    "firebase_url": "https://minhacomunidade-d9f2b.firebaseio.com",
+    "project_id": "minhacomunidade-d9f2b",
+    "storage_bucket": "minhacomunidade-d9f2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76648692680:android:a958514fdcda34b3",
+        "android_client_info": {
+          "package_name": "br.edu.ufabc.padm.minhacomunidade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76648692680-sbibfhi20i4b4adaqlr13iacrgd4q34t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0htBYkx8UAMbfEvYW3aUG8fIaeXbGUcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76648692680-sbibfhi20i4b4adaqlr13iacrgd4q34t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

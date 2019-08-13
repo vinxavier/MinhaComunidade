@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme"
         android:name=".App">
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyC1oop6vb7GtXqcQbw4-FIdp5DU2GCt1FM"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".view.MainActivity"
                     android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,18 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".view.LoginActivity"
                     android:label="@string/tela_de_login">
         </activity>
-        <activity android:name=".FeedActivity"
+        <activity android:name=".view.FeedActivity"
                   android:label="@string/feed">
         </activity>
-        <activity android:name=".NovoProjeto1Activity"
+        <activity android:name=".view.NovoProjeto1Activity"
                   android:label="@string/novo_projeto"/>
 
-        <activity android:name=".Cadastro.CadastroActvity"
+        <activity android:name="br.edu.ufabc.padm.minhacomunidade.view.Cadastro.CadastroActvity"
                   android:label="Tela de cadastro"/>
-        <activity android:name=".NovoProjeto2Activity"
+        <activity android:name=".view.NovoProjeto2Activity"
                   android:label="@string/carregar_imagens_projeto"/>
 
     </application>
