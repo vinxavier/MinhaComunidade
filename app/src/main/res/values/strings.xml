@@ -46,4 +46,8 @@
     <string name="usuario_salvo">Usuário salvo com sucesso</string>
     <string name="enter_name">Digite o seu nome</string>
     <string name="user_creation_failed">Falha ao criar usuário</string>
+    <string name="invalid_intent">Falha ao carregar imagem</string>
+    <string name="no_photo_returned">Nenhuma foto foi retornada</string>
+    <string name="ask_read_permission">Precisamos de permissão para acessar algumas imagens da galeria</string>
+    <string name="read_permission_required">Permissão necessária</string>
 </resources>

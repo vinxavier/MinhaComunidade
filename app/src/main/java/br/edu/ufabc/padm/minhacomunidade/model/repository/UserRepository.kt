@@ -14,12 +14,10 @@ object UserRepository {
 
 
     init{
-        database = FirebaseDatabase.getInstance().getReference(FirebaseContract.USERS_TABLE)
+        database = FirebaseDatabase.getInstance().getReference(FirebaseContract.USER_TABLE)
     }
 
-    fun newUser(user: Usuario){
-        val userId = database.push().key
-
+    fun newUser(userId: String, user: Usuario){
 
         database.child(userId!!).setValue(user)
             .addOnSuccessListener {

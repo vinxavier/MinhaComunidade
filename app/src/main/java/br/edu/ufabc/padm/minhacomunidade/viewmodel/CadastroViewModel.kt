@@ -6,7 +6,7 @@ import br.edu.ufabc.padm.minhacomunidade.model.repository.UserRepository
 
 class CadastroViewModel : ViewModel() {
 
-    fun salvarUsuario(user: Usuario){
-        return UserRepository.newUser(user)
+    fun salvarUsuario(userUID: String, user: Usuario){
+        return UserRepository.newUser(userUID, user)
     }
 }

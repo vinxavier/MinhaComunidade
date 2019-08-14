@@ -92,7 +92,7 @@ class CadastroBasicoFragment : Fragment() {
             .addOnCompleteListener(this.activity!!) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    viewModel.salvarUsuario(usuario)
+                    viewModel.salvarUsuario(auth.currentUser!!.uid,usuario)
                     Log.d(LOGTAG, "createUserWithEmail:success")
                     view.findNavController().navigate(CadastroBasicoFragmentDirections.action_cadastroBasicoFragment_to_uploadPhotoFragment())
                 } else {

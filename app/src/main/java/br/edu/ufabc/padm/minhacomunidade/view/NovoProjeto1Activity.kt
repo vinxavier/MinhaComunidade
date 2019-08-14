@@ -18,7 +18,7 @@ import java.util.*
 
 class NovoProjeto1Activity: AppCompatActivity(), PlaceSelectionListener {
     // Initialize the AutocompleteSupportFragment.
-    lateinit var autocompleteFragment: Place
+    lateinit var autocompleteFragment: AutocompleteSupportFragment
     private lateinit var confirmBtn: Button
     private lateinit var cancelBtn: Button
 
@@ -38,9 +38,8 @@ class NovoProjeto1Activity: AppCompatActivity(), PlaceSelectionListener {
             Places.initialize(App.context,apiKey)
         }
 
-        val placesClient = Places.createClient(this)
-        val autocompleteFragment =
-            supportFragmentManager.findFragmentById(R.id.local_autocomplete_fragment) as AutocompleteSupportFragment?
+        autocompleteFragment =
+            supportFragmentManager.findFragmentById(R.id.local_autocomplete_fragment) as AutocompleteSupportFragment
 
         autocompleteFragment!!.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME))
 
