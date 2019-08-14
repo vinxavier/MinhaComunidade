@@ -1,6 +1,6 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
-import android.app.Activity
+
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,7 @@ import br.edu.ufabc.padm.minhacomunidade.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-class LoginActivity: Activity() {
+class LoginActivity: AppCompatActivity() {
 
     private lateinit var loginBtn: Button
     private lateinit var forgottenBtn: Button

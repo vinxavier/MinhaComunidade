@@ -43,4 +43,7 @@
     <string name="reset_senha">Resetar</string>
     <string name="email_enviado">Email para resetar a senha enviado.</string>
     <string name="sair">Sair</string>
+    <string name="usuario_salvo">Usuário salvo com sucesso</string>
+    <string name="enter_name">Digite o seu nome</string>
+    <string name="user_creation_failed">Falha ao criar usuário</string>
 </resources>
