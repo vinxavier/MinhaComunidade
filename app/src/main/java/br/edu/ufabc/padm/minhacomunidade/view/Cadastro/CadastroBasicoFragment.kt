@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.widget.ContentLoadingProgressBar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -29,6 +30,7 @@ class CadastroBasicoFragment : Fragment() {
     private lateinit var userName: EditText
     private lateinit var userPhone: EditText
     private lateinit var userCity: EditText
+    lateinit var progressBar: ContentLoadingProgressBar
 
     private lateinit var viewModel: CadastroViewModel
 
@@ -49,9 +51,11 @@ class CadastroBasicoFragment : Fragment() {
         userName = binding.nomeCadastro
         userPhone = binding.telefoneCadastro
         userCity = binding.cidade
+        progressBar = binding.progressBar
 
 
         binding.buttonProximo.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER"){view: View ->
+            progressBar.show()
             singUpUser(view)
         }
         return binding.root
@@ -95,6 +99,7 @@ class CadastroBasicoFragment : Fragment() {
                     viewModel.salvarUsuario(auth.currentUser!!.uid,usuario)
                     Log.d(LOGTAG, "createUserWithEmail:success")
                     view.findNavController().navigate(CadastroBasicoFragmentDirections.action_cadastroBasicoFragment_to_uploadPhotoFragment())
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(LOGTAG, "createUserWithEmail:failure", task.exception)
@@ -102,6 +107,7 @@ class CadastroBasicoFragment : Fragment() {
                         App.context, getString(R.string.user_creation_failed),
                         Toast.LENGTH_SHORT).show()
                 }
+                progressBar.hide()
 
             }
 
