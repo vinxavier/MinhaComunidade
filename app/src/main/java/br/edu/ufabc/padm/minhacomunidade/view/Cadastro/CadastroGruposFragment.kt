@@ -13,6 +13,9 @@ import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.databinding.CadastroGruposFragmentBinding
 import androidx.navigation.findNavController
 import br.edu.ufabc.padm.minhacomunidade.App
+import android.util.SparseBooleanArray
+import androidx.lifecycle.ViewModelProviders
+import br.edu.ufabc.padm.minhacomunidade.viewmodel.CadastroGruposViewModel
 
 
 class CadastroGruposFragment : Fragment() {
@@ -20,11 +23,14 @@ class CadastroGruposFragment : Fragment() {
     lateinit var listView: ListView
 
     private val LOGTAG = CadastroGruposFragment::class.java.getSimpleName()
+    private lateinit var viewModel: CadastroGruposViewModel
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
+
+        viewModel = ViewModelProviders.of(this).get(CadastroGruposViewModel::class.java)
 
         val binding = DataBindingUtil.inflate<CadastroGruposFragmentBinding>(inflater, R.layout.cadastro_grupos_fragment, container, false)
 
@@ -39,11 +45,15 @@ class CadastroGruposFragment : Fragment() {
 
         //TODO: adicionar cada item selecionado à ArrayList
         binding.finalizarBtn.setOnClickListener{
-            if(listView!=null) {
-                var groups: ArrayList<String> = listView.selectedItem as ArrayList<String>
-                Log.i("GRUPOTENT", groups.get(0))
-                println(groups)
+            val checked = listView.getCheckedItemPositions()
+            val gruposArray = ArrayList<String>()
+            for (i in 0 until checked.size()) {
+                if (checked.valueAt(i)) {
+                    val grupo = listView.getItemAtPosition(checked.keyAt(i)) as String
+                    gruposArray.add(grupo)
+                }
             }
+            viewModel.definirGruposUsuario(gruposArray)
             it.findNavController().navigate(CadastroGruposFragmentDirections.action_cadastroGruposFragment_to_feedActivity())
         }
 
