@@ -1,81 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/colorPrimaryLight"
-              tools:context=".view.Cadastro.CadastroBasicoFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+                                                       android:layout_width="match_parent">
+        <LinearLayout
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="@color/colorPrimaryLight"
+                      tools:context=".view.Cadastro.CadastroBasicoFragment">
 
-    <EditText
-            android:id="@+id/email_cadastro"
-            android:hint="@string/email"
-            android:textSize="20sp"
-            android:layout_marginTop="80dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
-            android:backgroundTint="@color/colorAccent"/>
+            <EditText
+                    android:id="@+id/email_cadastro"
+                    android:hint="@string/email"
+                    android:textSize="20sp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:backgroundTint="@color/colorAccent"/>
 
-    <EditText
-            android:id="@+id/nome_cadastro"
-            android:textSize="20sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/nome" android:textColor="@color/primaryTextColor"
-            android:textColorHint="@color/primaryTextColor" android:backgroundTint="@color/colorAccent"/>
+            <EditText
+                    android:id="@+id/nome_cadastro"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nome" android:textColor="@color/primaryTextColor"
+                    android:textColorHint="@color/primaryTextColor" android:backgroundTint="@color/colorAccent"/>
 
-    <EditText
-            android:id="@+id/senha_cadastro"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/senha"
-            android:textSize="20sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" android:textColor="@color/primaryTextColor"
-            android:textColorHint="@color/primaryTextColor" android:backgroundTint="@color/colorAccent"/>
+            <EditText
+                    android:id="@+id/senha_cadastro"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/senha"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp" android:textColor="@color/primaryTextColor"
+                    android:textColorHint="@color/primaryTextColor" android:backgroundTint="@color/colorAccent"/>
 
-    <EditText
-            android:id="@+id/telefone_cadastro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:hint="@string/telefone"
-            android:textSize="20sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/primaryTextColor" android:textColorHint="@color/primaryTextColor"/>
+            <EditText
+                    android:id="@+id/telefone_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="@string/telefone"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp" android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/primaryTextColor" android:textColorHint="@color/primaryTextColor"/>
 
-    <EditText
-            android:id="@+id/cidade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cidade"
-            android:textSize="20sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
-            android:backgroundTint="@color/colorAccent"/>
-    <Button
-            android:text="@string/proximo"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_proximo" android:layout_marginTop="40dp" android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/colorPrimaryDark" android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+            <EditText
+                    android:id="@+id/cidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cidade"
+                    android:inputType="text"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:backgroundTint="@color/colorAccent"/>
+            <Button
+
+                    android:text="@string/proximo"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_proximo" android:layout_marginTop="40dp" android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp" android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark" android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+        <androidx.core.widget.ContentLoadingProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+                                                        android:visibility="invisible"
+                                                        android:layout_height="wrap_content"
+                                                        style="?android:attr/progressBarStyleLarge"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.5"
+                                                        app:layout_constraintVertical_bias="0.5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

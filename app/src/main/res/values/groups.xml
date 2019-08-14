@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="groups_list">
+        <item>ABC</item>
+        <item>Zona Norte SP</item>
+        <item>Zona Leste SP</item>
+        <item>Zona Sul SP</item>
+        <item>Zona Oeste SP</item>
+        <item>Centro SP</item>
+        <item>Santos</item>
+        <item>Osasco</item>
+    </string-array>
+</resources>
