@@ -20,7 +20,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="slecao_grupos_titulo">Selecione seus grupos:</string>
-    <string name="selecao_grupos_descricao">Lorem ipsum sit dolor amet</string>
+    <string name="selecao_grupos_descricao">Os grupos serão usados para mostrar os projetos voluntários em seus grupos(zonas) de interesse. Você pode selecionar mais de um grupo.</string>
     <string name="finalizar">Finalizar</string>
     <string name="acessar_perfil">Acessar o perfil</string>
     <string name="meus_projetos">Meus Projetos</string>
@@ -50,4 +50,5 @@
     <string name="no_photo_returned">Nenhuma foto foi retornada</string>
     <string name="ask_read_permission">Precisamos de permissão para acessar algumas imagens da galeria</string>
     <string name="read_permission_required">Permissão necessária</string>
+    <string name="upload_image_failed">Falha no upload da imagem</string>
 </resources>

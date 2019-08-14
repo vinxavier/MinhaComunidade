@@ -1,33 +1,37 @@
 package br.edu.ufabc.padm.minhacomunidade.model.repository
 
 import android.util.Log
-import br.edu.ufabc.padm.minhacomunidade.model.entity.Usuario
+import br.edu.ufabc.padm.minhacomunidade.model.entity.UserGroups
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-object UserRepository {
+object GroupsRepository {
     private var database: DatabaseReference
 
-    private val LOGTAG = UserRepository::class.java.getSimpleName()
 
+    private val LOGTAG = GroupsRepository::class.java.getSimpleName()
 
     init{
-        database = FirebaseDatabase.getInstance().getReference(FirebaseContract.USER_TABLE)
+        database = FirebaseDatabase.getInstance().getReference(FirebaseContract.GROUPS_USER_TABLE)
     }
 
-    fun newUser(userId: String, user: Usuario){
+    fun setUserGroups(groups: ArrayList<String>, userId: String){
+        val uid = database.push().key
 
-        database.child(userId!!).setValue(user)
+        val userGroups = UserGroups(groups,userId)
+
+        database.child(uid!!).setValue(userGroups)
             .addOnSuccessListener {
                 // Write was successful!
                 // ...
-                Log.w(LOGTAG, "Usuario salvo com sucesso")
+                Log.w(LOGTAG, "Grupos salvos com sucesso")
             }
             .addOnFailureListener {
                 // Write failed
                 // ...
                 Log.e(LOGTAG, it.toString())
             }
+
     }
 
 }
