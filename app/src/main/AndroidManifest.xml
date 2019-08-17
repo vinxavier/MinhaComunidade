@@ -39,17 +39,17 @@
                 android:label="@string/tela_de_login">
         </activity>
         <activity
-                android:name=".view.FeedActivity"
+                android:name=".view.FeedFragment"
                 android:label="@string/feed">
         </activity>
         <activity
-                android:name=".view.NovoProjeto1Activity"
+                android:name=".view.NovoProjetoInfosFragment"
                 android:label="@string/novo_projeto"/>
         <activity
                 android:name=".view.Cadastro.CadastroActvity"
                 android:label="Tela de cadastro"/>
         <activity
-                android:name=".view.NovoProjeto2Activity"
+                android:name=".view.NovoProjetoImagemFragment"
                 android:label="@string/carregar_imagens_projeto"/>
     </application>
 

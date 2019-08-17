@@ -1,54 +1,29 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import br.edu.ufabc.padm.minhacomunidade.App
-import br.edu.ufabc.padm.minhacomunidade.view.Cadastro.CadastroActvity
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import br.edu.ufabc.padm.minhacomunidade.R
+import br.edu.ufabc.padm.minhacomunidade.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var loginBtn: Button
-    private lateinit var cadastroBtn: Button
     private lateinit var auth: FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        auth = FirebaseAuth.getInstance()
-        val currentUser = auth.currentUser
-        updateUI(currentUser)
-        setContentView(R.layout.activity_main)
-        init()
-    }
+   override fun onCreate(savedInstanceState: Bundle?){
+       super.onCreate(savedInstanceState)
 
-    private fun init(){
-        loginBtn = findViewById(R.id.login_btn)
-        cadastroBtn = findViewById(R.id.cadastrar_btn)
-    }
+       auth = FirebaseAuth.getInstance()
+       val currentUser = auth.currentUser
 
-    override fun onResume() {
-        super.onResume()
+       val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        loginBtn.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
-        cadastroBtn.setOnClickListener{
-            startActivity(Intent(this, CadastroActvity::class.java))
-        }
-
-    }
-
-    private fun updateUI(currentUser: FirebaseUser?){
-        if(currentUser!=null){
-            startActivity(Intent(App.context,FeedActivity::class.java))
-            finish()
-        }
-    }
+       
+   }
 }

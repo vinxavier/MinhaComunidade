@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:gravity="center" android:layout_height="wrap_content"
+                      android:orientation="horizontal" android:layout_above="@+id/botos_confirm"
+                      android:layout_marginBottom="278dp">
+
+            <Button android:id="@+id/carregar_imagens"
+                    android:text="@string/carregar_imagens"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/primaryTextColor"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:lines="1"
+                    android:textAlignment="center" android:textSize="18sp"
+            />
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:padding="5dp"
+                      android:gravity="center"
+                      android:layout_alignParentBottom="true" android:layout_marginBottom="40dp"
+                      android:id="@+id/botos_confirm">
+
+            <Button android:id="@+id/pular_button"
+                    android:background="@color/light_gray"
+                    android:padding="5dp"
+                    android:textColor="@color/primaryTextColor" android:text="@string/pular"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <Space android:layout_width="40dp" android:layout_height="match_parent" android:layout_marginTop="-673dp"
+            />
+            <Button android:id="@+id/confirm_button"
+                    android:padding="5dp"
+                    android:background="@color/base_green"
+                    android:drawableLeft="@drawable/ic_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="@string/confirmar"
+            />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

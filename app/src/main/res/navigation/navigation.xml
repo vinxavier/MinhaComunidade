@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
-            app:startDestination="@id/cadastroBasicoFragment">
+            app:startDestination="@+id/landingFragment">
 
     <fragment android:id="@+id/uploadPhotoFragment"
               android:name="br.edu.ufabc.padm.minhacomunidade.view.Cadastro.CadastroFotoFragment"
@@ -21,11 +21,36 @@
     <fragment android:id="@+id/cadastroGruposFragment"
               android:name="br.edu.ufabc.padm.minhacomunidade.view.Cadastro.CadastroGruposFragment"
               android:label="fragment_cadastro_grupos" tools:layout="@layout/cadastro_grupos_fragment">
-        <action android:id="@+id/action_cadastroGruposFragment_to_feedActivity" app:destination="@id/feedActivity"
-                app:popUpTo="@+id/loginActivity" app:popUpToInclusive="false"/>
+        <action android:id="@+id/action_cadastroGruposFragment_to_feedFragment" app:destination="@id/feedFragment"/>
     </fragment>
-    <activity android:id="@+id/feedActivity" android:name="br.edu.ufabc.padm.minhacomunidade.view.FeedActivity"
-              android:label="feed_activity" tools:layout="@layout/feed_activity"/>
-    <activity android:id="@+id/loginActivity" android:name="br.edu.ufabc.padm.minhacomunidade.view.LoginActivity"
-              android:label="LoginActivity"/>
+    <fragment android:id="@+id/landingFragment" android:name="br.edu.ufabc.padm.minhacomunidade.view.LandingFragment"
+              android:label="LandingFragment">
+        <action android:id="@+id/action_landingFragment_to_cadastroBasicoFragment"
+                app:destination="@id/cadastroBasicoFragment"/>
+        <action android:id="@+id/action_landingFragment_to_loginFragment" app:destination="@id/loginFragment"/>
+        <action android:id="@+id/action_landingFragment_to_feedFragment" app:destination="@id/feedFragment"
+                app:popUpTo="@+id/landingFragment" app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment android:id="@+id/loginFragment" android:name="br.edu.ufabc.padm.minhacomunidade.view.LoginFragment"
+              android:label="LoginFragment">
+        <action android:id="@+id/action_loginFragment_to_feedFragment" app:destination="@id/feedFragment"/>
+    </fragment>
+    <fragment android:id="@+id/feedFragment" android:name="br.edu.ufabc.padm.minhacomunidade.view.FeedFragment"
+              android:label="FeedFragment">
+        <action android:id="@+id/action_feedFragment_to_novoProjetoInfosFragment"
+                app:destination="@id/novoProjetoInfosFragment"/>
+        <action android:id="@+id/action_feedFragment_to_landingFragment" app:destination="@id/landingFragment"/>
+    </fragment>
+    <fragment android:id="@+id/novoProjetoInfosFragment"
+              android:name="br.edu.ufabc.padm.minhacomunidade.view.NovoProjetoInfosFragment"
+              android:label="NovoProjetoInfosFragment">
+        <action android:id="@+id/action_novoProjetoInfosFragment_to_feedFragment" app:destination="@id/feedFragment"/>
+        <action android:id="@+id/action_novoProjetoInfosFragment_to_novoProjetoImagemFragment"
+                app:destination="@id/novoProjetoImagemFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/novoProjetoImagemFragment2"
+              android:name="br.edu.ufabc.padm.minhacomunidade.view.NovoProjetoImagemFragment"
+              android:label="NovoProjetoImagemFragment">
+        <action android:id="@+id/action_novoProjetoImagemFragment2_to_feedFragment" app:destination="@id/feedFragment"/>
+    </fragment>
 </navigation>

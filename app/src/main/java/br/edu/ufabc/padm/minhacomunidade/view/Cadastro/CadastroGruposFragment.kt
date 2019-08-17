@@ -45,6 +45,7 @@ class CadastroGruposFragment : Fragment() {
 
         //TODO: adicionar cada item selecionado à ArrayList
         binding.finalizarBtn.setOnClickListener{
+                view: View ->
             val checked = listView.getCheckedItemPositions()
             val gruposArray = ArrayList<String>()
             for (i in 0 until checked.size()) {
@@ -54,7 +55,8 @@ class CadastroGruposFragment : Fragment() {
                 }
             }
             viewModel.definirGruposUsuario(gruposArray)
-            it.findNavController().navigate(CadastroGruposFragmentDirections.action_cadastroGruposFragment_to_feedActivity())
+            view.findNavController().navigate(CadastroGruposFragmentDirections.action_cadastroGruposFragment_to_feedFragment())
+
         }
 
         return binding.root

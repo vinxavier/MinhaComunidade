@@ -22,7 +22,7 @@ import br.edu.ufabc.padm.minhacomunidade.viewmodel.CadastroViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-class CadastroBasicoFragment : Fragment() {
+class  CadastroBasicoFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var userLogin: EditText
