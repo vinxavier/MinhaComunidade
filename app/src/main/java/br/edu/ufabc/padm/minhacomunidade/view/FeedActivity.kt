@@ -5,18 +5,23 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufabc.padm.minhacomunidade.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class FeedActivity:AppCompatActivity() {
 
+    private lateinit var auth: FirebaseAuth
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var addButton: FloatingActionButton
+    lateinit var profileImageReference: StorageReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +32,12 @@ class FeedActivity:AppCompatActivity() {
     }
 
     private fun populateProjetos() {
+        auth = FirebaseAuth.getInstance()
+
         viewManager = LinearLayoutManager(this)
         viewAdapter = ProjetoAdapter()
+
+        profileImageReference = FirebaseStorage.getInstance().getReference("profilepics")
 
         recyclerView = findViewById<RecyclerView>(R.id.recycle_projetos).apply {
             // use this setting to improve performance if you know that changes
@@ -42,6 +51,12 @@ class FeedActivity:AppCompatActivity() {
             adapter = viewAdapter
 
         }
+
+        profileImageReference.getFile((auth.currentUser!!.uid+"profilepic.jpg").toUri())
+
+
+
+
 
 
     }
@@ -58,6 +73,9 @@ class FeedActivity:AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.feed_menu, menu)
+
+        //menu?.getItem(R.id.action_perfil)?.icon =
+
         return true
     }
 

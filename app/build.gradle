@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:18.1.0'
 
 
+
     // Core
     implementation "androidx.core:core:1.0.2"
 
@@ -69,5 +70,8 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.0.0'
 
 }
+
+
+
 
 apply plugin: 'com.google.gms.google-services'

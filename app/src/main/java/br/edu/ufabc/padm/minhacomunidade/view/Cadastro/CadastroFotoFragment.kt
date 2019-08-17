@@ -151,7 +151,6 @@ class CadastroFotoFragment : Fragment() {
 
     private fun uploadImageToFirebaseStorage(){
         App.registerBroadcast(uploadImageReceiver, IntentFilter(UploadFirebaseStorageContract.UPLOAD_PROFILE_PICTURE_STATUS))
-
         val intent =   Intent(this.activity!!, ProfilePictureUploadService::class.java)
         intent.action = UploadFirebaseStorageContract.UPLOAD_PROFILE_PICTURE
         intent.putExtra(UploadFirebaseStorageContract.UPLOAD_PROFILE_PICTURE_EXTRA, photoURI)

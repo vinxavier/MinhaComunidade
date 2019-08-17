@@ -19,6 +19,12 @@ object UploadFirebaseStorageContract{
     const val UPLOAD_PROFILE_PICTURE_STATUS = "upload_profile_picture_status"
     const val UPLOAD_PROFILE_PICTURE_STATUS_EXTRA = "upload_profile_picture_status_extra"
 
+    const val GET_PROFILE_PICTURE = "get_profile_picture"
+    const val GET_PROFILE_PICTURE_EXTRA = "get_profile_picture_extra"
+
+    const val GET_PROFILE_PICTURE_STATUS = "get_profile_picture_status"
+    const val GET_PROFILE_PICTURE_STATUS_EXTRA = "get_profile_picture_status_extra"
+
 
 }
 

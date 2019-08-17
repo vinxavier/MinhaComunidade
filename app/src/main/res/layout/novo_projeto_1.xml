@@ -13,6 +13,24 @@
               android:layout_marginTop="10dp"
               android:inputType="text" android:textStyle="bold" android:textSize="20sp"
     />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+                  android:gravity="center" android:layout_marginTop="10dp">
+        <TextView android:text="@string/descricao"
+                  android:textAlignment="textEnd"
+                  android:layout_width="wrap_content"
+                  android:layout_marginStart="5dp"
+                  android:layout_height="wrap_content" android:textSize="18sp"/>
+        <Space android:layout_width="10dp" android:layout_height="match_parent"/>
+        <EditText android:id="@+id/descricao_projeto"
+                  android:hint="Descrição do projeto"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:singleLine="true" android:ellipsize="end"
+                  android:padding="10dp"
+                  android:layout_marginEnd="5dp"
+                  android:inputType="text"/>
+    </LinearLayout>
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
             android:gravity="center" android:layout_marginTop="10dp">
         <TextView android:text="@string/grupos"
@@ -22,29 +40,13 @@
         <Space android:layout_width="10dp" android:layout_height="match_parent"/>
 
         <Spinner android:id="@+id/selecionar_grupo"
-                android:layout_width="wrap_content"
+                 android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:autofillHints="@string/selecionar_grupo"
                  android:padding="10dp"
-                />
+                 android:entries="@array/groups_list"/>
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
-                  android:gravity="center" android:layout_marginTop="10dp">
-        <TextView android:text="@string/tags"
-                  android:textAlignment="textEnd"
-                  android:layout_width="wrap_content"
-                  android:layout_marginStart="5dp"
-                  android:layout_height="wrap_content" android:textSize="18sp"/>
-        <Space android:layout_width="10dp" android:layout_height="match_parent"/>
-        <EditText android:id="@+id/selecionar_tag"
-                  android:hint="#Limpeza #Ajuda #EventoBeneficente #Pintura #Aulas..."
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content" android:singleLine="true" android:ellipsize="end"
-                  android:padding="10dp"
-                  android:layout_marginEnd="5dp"
-        android:inputType="text"/>
-    </LinearLayout>
 
     <TextView android:text="@string/local"
               android:textAlignment="textStart"
@@ -80,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:hint="Data do Evento"
+                android:clickable="true"
                 android:ems="10"
                 android:id="@+id/data_event" android:textSize="18sp"/>
         <ImageButton
@@ -103,7 +106,7 @@
                   android:layout_height="wrap_content"
                   android:gravity="center"
                   android:textAlignment="center"
-                  android:inputType="number" android:text="0"/>
+                  android:inputType="number" android:text="1"/>
         <ImageButton
                 android:id="@+id/plus_vol_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:src="@drawable/ic_add_circle_24dp"
