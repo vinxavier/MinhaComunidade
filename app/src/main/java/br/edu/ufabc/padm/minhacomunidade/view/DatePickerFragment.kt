@@ -4,14 +4,14 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.DatePicker
-import android.widget.TextView
+import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import br.edu.ufabc.padm.minhacomunidade.App
 import java.util.*
 
-class DatePickerFragment(date: TextView) : DialogFragment(), DatePickerDialog.OnDateSetListener {
+class DatePickerFragment(date: EditText) : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
-    private var dateEditable: TextView = date
+    private var dateEditable: EditText = date
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         super.onCreateDialog(savedInstanceState)
@@ -27,7 +27,15 @@ class DatePickerFragment(date: TextView) : DialogFragment(), DatePickerDialog.On
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int){
         // Do something with the date chosen by the user
-        dateEditable.text =  day.toString() + " / " + month.toString() + " / " + year.toString()
+        var mes = month.toString()
+        if(mes.length<2){
+            mes = "0"+mes
+        }
+        var dia = day.toString()
+        if(dia.length<2){
+            dia = "0" + dia
+        }
+        dateEditable.setText(dia + " / " + mes + " / " + year.toString())
 
     }
 
