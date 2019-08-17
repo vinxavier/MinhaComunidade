@@ -21,7 +21,6 @@ object ProjetoDAO{
         p.endr = "Rua José Fernandes, 453"
         p.dataEvent = "25/03/2019"
         p.grupo = "ABC"
-        p.tag = "#comunidade"
         p.minVol = 10
         p.vol = 6
 
@@ -35,7 +34,6 @@ object ProjetoDAO{
         p.endr = "Rua Pitô Fagundes, 43"
         p.dataEvent = "10/03/2019"
         p.grupo = "ABC"
-        p.tag = "#comunidade"
         p.minVol = 10
         p.vol = 2
 

@@ -1,13 +1,17 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
+import android.app.DatePickerDialog
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
-import android.widget.Button
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import br.edu.ufabc.padm.minhacomunidade.App
 import br.edu.ufabc.padm.minhacomunidade.R
+import br.edu.ufabc.padm.minhacomunidade.model.entity.Projeto
 import com.google.android.gms.common.api.Status
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
@@ -21,6 +25,11 @@ class NovoProjeto1Activity: AppCompatActivity(), PlaceSelectionListener {
     lateinit var autocompleteFragment: AutocompleteSupportFragment
     private lateinit var confirmBtn: Button
     private lateinit var cancelBtn: Button
+    private lateinit var dateBtn: ImageButton
+    private lateinit var tituloInput: EditText
+    private lateinit var gruposInput: Spinner
+    private lateinit var dateInput: TextView
+    private var projeto: Projeto = Projeto()
 
     private var apiKey = "AIzaSyC1oop6vb7GtXqcQbw4-FIdp5DU2GCt1FM"
 
@@ -58,6 +67,8 @@ class NovoProjeto1Activity: AppCompatActivity(), PlaceSelectionListener {
 
         confirmBtn = findViewById(R.id.confirm_button)
         cancelBtn = findViewById(R.id.cancel_button)
+        dateBtn = findViewById(R.id.data_button)
+        dateInput = findViewById(R.id.data_event)
 
     }
 
@@ -81,6 +92,23 @@ class NovoProjeto1Activity: AppCompatActivity(), PlaceSelectionListener {
             startActivity(Intent(this, FeedActivity::class.java))
         }
 
+        dateBtn.setOnClickListener {
+            showDateDialog()
+
+        }
+
+        dateInput.setOnClickListener {
+            showDateDialog()
+        }
+
     }
 
+    fun showDateDialog(){
+        val newFragment = DatePickerFragment(dateInput)
+        newFragment.show(supportFragmentManager, "datePicker")
+    }
+
+
 }
+
+
