@@ -1,16 +1,25 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.ufabc.padm.minhacomunidade.App
 import br.edu.ufabc.padm.minhacomunidade.R
+import br.edu.ufabc.padm.minhacomunidade.model.entity.Usuario
+import br.edu.ufabc.padm.minhacomunidade.model.repository.FirebaseContract
+import br.edu.ufabc.padm.minhacomunidade.services.FetchProjetosContract
+import br.edu.ufabc.padm.minhacomunidade.services.FetchProjetosService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -22,17 +31,28 @@ class FeedActivity:AppCompatActivity() {
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var addButton: FloatingActionButton
     lateinit var profileImageReference: StorageReference
+    private var actualUser: Usuario? = null
+    private lateinit var database: DatabaseReference
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.feed_activity)
         addButton = findViewById(R.id.addButton)
         populateProjetos()
     }
 
     private fun populateProjetos() {
+
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference(FirebaseContract.USER_TABLE)
+
+
+
+        database.child(auth.currentUser!!.uid).addListenerForSingleValueEvent(userListener)
+
 
         viewManager = LinearLayoutManager(this)
         viewAdapter = ProjetoAdapter()
@@ -52,17 +72,24 @@ class FeedActivity:AppCompatActivity() {
 
         }
 
-        profileImageReference.getFile((auth.currentUser!!.uid+"profilepic.jpg").toUri())
-
-
-
-
+        //profileImageReference.getFile((auth.currentUser!!.uid+"profilepic.jpg").toUri())
 
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        if(auth.currentUser==null){
+            startActivity(Intent(App.context, MainActivity::class.java))
+            finish()
+        }
+    }
+
     override fun onResume() {
         super.onResume()
+
+        recyclerView.adapter!!.notifyDataSetChanged()
+
         addButton.setOnClickListener{
             val intent = Intent(this, NovoProjeto1Activity::class.java)
 
@@ -90,5 +117,55 @@ class FeedActivity:AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
+
+
+    val userListener = object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            // Get Post object and use the values to update the UI
+            if( dataSnapshot.getValue(Usuario::class.java)!= null) {
+                actualUser = dataSnapshot.getValue(Usuario::class.java)!!
+                callProjects()
+                Log.w("LOGFEED", actualUser!!.nome)
+            }
+            // ...
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Post failed, log a message
+            Log.w("LOG FEED ACTIVITY", "loadPost:onCancelled", databaseError.toException())
+            // ...
+        }
+    }
+
+    private fun callProjects() {
+        if (actualUser!=null) {
+            val userGroup = actualUser!!.groups
+            fetchProjetos(userGroup)
+        }
+    }
+
+
+    private fun fetchProjetos(grupos: ArrayList<String>){
+        App.registerBroadcast(fetchProjectsReceiver, IntentFilter(FetchProjetosContract.FETCHED_PROJETOS))
+        val intent =   Intent(this, FetchProjetosService::class.java)
+        intent.action = FetchProjetosContract.FETCH_PROJETOS
+        intent.putExtra(FetchProjetosContract.FETCH_PROJETOS_EXTRA, grupos)
+        App.context.startService(intent)
+    }
+
+    private val fetchProjectsReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            intent?.apply {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        App.unregisterBroadcast(fetchProjectsReceiver)
+
+    }
+
 
 }

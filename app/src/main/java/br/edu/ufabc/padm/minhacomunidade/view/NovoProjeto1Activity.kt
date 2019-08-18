@@ -13,6 +13,7 @@ import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.model.entity.Projeto
 import br.edu.ufabc.padm.minhacomunidade.model.repository.FirebaseContract
 import br.edu.ufabc.padm.minhacomunidade.model.repository.ProjectRepository
+import br.edu.ufabc.padm.minhacomunidade.services.FetchProjetosContract
 import br.edu.ufabc.padm.minhacomunidade.viewmodel.NovoProjetoViewModel
 import com.google.android.gms.common.api.Status
 import com.google.android.libraries.places.api.Places
@@ -118,11 +119,13 @@ class NovoProjeto1Activity: AppCompatActivity(){
         }
 
         incrementBtn.setOnClickListener {
+            minVol = minVolInput.text.toString().toInt()
             minVol +=1
             minVolInput.setText(minVol.toString())
         }
 
         decrementBtn.setOnClickListener {
+            minVol = minVolInput.text.toString().toInt()
             minVol -=1
             minVolInput.setText(minVol.toString())
         }
@@ -178,6 +181,7 @@ class NovoProjeto1Activity: AppCompatActivity(){
 
 
     }
+
 
 
 }

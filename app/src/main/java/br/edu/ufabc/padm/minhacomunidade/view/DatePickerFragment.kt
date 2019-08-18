@@ -29,7 +29,7 @@ class DatePickerFragment(date: EditText) : DialogFragment(), DatePickerDialog.On
         // Do something with the date chosen by the user
         var mes = month.toString()
         if(mes.length<2){
-            mes = "0"+mes
+            mes = "0"+(mes.toInt()+1).toString()
         }
         var dia = day.toString()
         if(dia.length<2){

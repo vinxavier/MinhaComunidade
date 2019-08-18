@@ -7,5 +7,6 @@ data class Usuario(
     var email: String = "",
     var nome: String = "",
     var cidade: String = "",
-    var telefone: String = ""
+    var telefone: String = "",
+    var groups:ArrayList<String> = ArrayList()
 )
