@@ -16,6 +16,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <service
+                android:name=".services.FetchProjetosService"
+                android:enabled="true"
+                android:exported="false">
+        </service>
+        <service
                 android:name=".services.ProfilePictureUploadService"
                 android:enabled="true"
                 android:exported="false">
