@@ -54,8 +54,11 @@
                 android:name=".view.Cadastro.CadastroActvity"
                 android:label="Tela de cadastro"/>
         <activity
-                android:name=".view.NovoProjeto2Activity"
-                android:label="@string/carregar_imagens_projeto"/>
+            android:name=".view.NovoProjeto2Activity"
+            android:label="@string/carregar_imagens_projeto"/>
+        <activity
+                android:name=".view.PerfilActivity"
+                android:label="@string/perfilActivity"/>
     </application>
 
 </manifest>

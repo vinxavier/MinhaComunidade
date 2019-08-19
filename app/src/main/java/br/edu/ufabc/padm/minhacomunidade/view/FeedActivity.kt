@@ -101,7 +101,7 @@ class FeedActivity:AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.feed_menu, menu)
 
-        //menu?.getItem(R.id.action_perfil)?.icon =
+        //menu?.getItem(R.id.action_perfil)?.icon
 
         return true
     }
@@ -113,6 +113,9 @@ class FeedActivity:AppCompatActivity() {
             startActivity(intent)
 
             return true
+        }else if(item.itemId == R.id.action_perfil){
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
         }
 
         return super.onOptionsItemSelected(item)

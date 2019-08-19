@@ -7,7 +7,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 class PerfilViewModel: ViewModel(){
 
-    fun retrieveUsuario(auth: FirebaseAuth): Usuario {
-        return UserRepository.retrieveUserData(auth)
+    fun retrieveUsuario(): Usuario? {
+        if( UserRepository.getUser() != null){
+            return UserRepository.getUser()!!
+        }
+        return null
     }
 }

@@ -21,7 +21,7 @@
                     app:civ_circle_color="#B1B1B1" app:civ_border_color="#000000" app:civ_border="true"
                     android:layout_marginEnd="8dp"
                     android:layout_gravity="center"
-                    android:id="@+id/profile_picture" app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/perfil_foto" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="16dp" android:layout_marginTop="50dp"
                     app:layout_constraintVertical_bias="0.2" app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -29,20 +29,24 @@
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
+                      android:id="@+id/nome_text"
                       android:layout_marginBottom="36dp"/>
 
 
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
+                      android:id="@+id/email_text"
                       android:layout_marginBottom="36dp"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
+                      android:id="@+id/cidade_text"
                       android:layout_marginBottom="36dp"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
+                      android:id="@+id/telefone_text"
                       android:layout_marginBottom="36dp"/>
 
 
