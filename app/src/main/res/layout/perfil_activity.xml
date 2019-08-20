@@ -30,24 +30,28 @@
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
                       android:id="@+id/nome_text"
-                      android:layout_marginBottom="36dp"/>
+                      android:layout_marginBottom="36dp" android:textSize="36sp"
+                      android:textColor="@color/colorAccent" android:textAlignment="center"/>
 
 
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
                       android:id="@+id/email_text"
-                      android:layout_marginBottom="36dp"/>
+                      android:layout_marginBottom="36dp" android:textSize="18sp"
+                      android:textColor="@color/colorAccent" android:textAlignment="center"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
                       android:id="@+id/cidade_text"
-                      android:layout_marginBottom="36dp"/>
+                      android:layout_marginBottom="36dp" android:textSize="18sp"
+                      android:textColor="@color/colorAccent" android:textAlignment="center"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_gravity="center"
                       android:id="@+id/telefone_text"
-                      android:layout_marginBottom="36dp"/>
+                      android:layout_marginBottom="36dp" android:textSize="18sp"
+                      android:textColor="@color/colorAccent" android:textAlignment="center"/>
 
 
         </LinearLayout>

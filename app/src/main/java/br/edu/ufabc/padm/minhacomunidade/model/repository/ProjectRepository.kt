@@ -47,4 +47,8 @@ object ProjectRepository {
             }
         }
     }
+
+    fun newProject(projeto: Projeto){
+        database.push().setValue(projeto)
+    }
 }

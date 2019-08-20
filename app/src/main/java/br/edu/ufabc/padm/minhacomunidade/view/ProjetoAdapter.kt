@@ -1,8 +1,7 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.content.Context
+import android.view.*
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -47,5 +46,7 @@ class ProjetoAdapter : RecyclerView.Adapter<ProjetoAdapter.ProjetoHolder>() {
     override fun getItemId(p0: Int): Long {
         return 0
     }
+
+
 
 }

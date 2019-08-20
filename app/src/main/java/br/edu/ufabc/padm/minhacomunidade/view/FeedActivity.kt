@@ -8,11 +8,16 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ufabc.padm.minhacomunidade.App
+import br.edu.ufabc.padm.minhacomunidade.OnItemClickListener
 import br.edu.ufabc.padm.minhacomunidade.R
+import br.edu.ufabc.padm.minhacomunidade.addOnItemClickListener
+import br.edu.ufabc.padm.minhacomunidade.model.dao.ProjetoDAO
+import br.edu.ufabc.padm.minhacomunidade.model.entity.Projeto
 import br.edu.ufabc.padm.minhacomunidade.model.entity.Usuario
 import br.edu.ufabc.padm.minhacomunidade.model.repository.FirebaseContract
 import br.edu.ufabc.padm.minhacomunidade.services.FetchProjetosContract
@@ -90,12 +95,30 @@ class FeedActivity:AppCompatActivity() {
 
         recyclerView.adapter!!.notifyDataSetChanged()
 
+        recyclerView.addOnItemClickListener(object: OnItemClickListener{
+
+
+            override fun onItemClicked(position: Int, view: View) {
+
+                val projeto = ProjetoDAO.getItemAt(position)
+                iniciarActivity(projeto)
+
+            }
+        })
+
+
         addButton.setOnClickListener{
             val intent = Intent(this, NovoProjeto1Activity::class.java)
 
             startActivity(intent)
         }
 
+    }
+
+    fun iniciarActivity(projeto:Projeto){
+        val intent = Intent(this, DetalheProjetoActivity::class.java)
+        intent.putExtra("PROJETO", projeto)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
