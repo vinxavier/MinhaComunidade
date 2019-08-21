@@ -17,6 +17,8 @@
     <string name="feed">Feed</string>
     <string name="buscar">Buscar projetos</string>
 
+    <string name="perfilActivity">Visualizar perfil</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="slecao_grupos_titulo">Selecione seus grupos:</string>

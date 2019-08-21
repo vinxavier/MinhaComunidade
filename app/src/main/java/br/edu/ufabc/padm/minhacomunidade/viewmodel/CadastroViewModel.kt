@@ -9,4 +9,6 @@ class CadastroViewModel : ViewModel() {
     fun salvarUsuario(user: Usuario){
         return UserRepository.newUser(user)
     }
+
+
 }

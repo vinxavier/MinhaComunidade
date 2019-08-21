@@ -75,7 +75,7 @@ object UserRepository {
         if(actualUser!=null) {
             Log.w(LOGTAG, actualUser!!.nome)
         }else{
-            Log.w(LOGTAG, "User ta null")
+            Log.w(LOGTAG, "User esta null")
         }
         return actualUser
     }
