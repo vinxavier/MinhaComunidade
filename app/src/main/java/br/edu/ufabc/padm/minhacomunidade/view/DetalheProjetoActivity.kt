@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.model.entity.Projeto
 
+
 class DetalheProjetoActivity: AppCompatActivity(){
-    val projeto = intent.extras?.get("Projeto") as? Projeto
+
+    private lateinit var projeto:Projeto
 
     private lateinit var tituloTextView: TextView
     private lateinit var grupoTextView: TextView
@@ -20,8 +22,18 @@ class DetalheProjetoActivity: AppCompatActivity(){
 
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val extras = intent.extras
+
+
+        if (extras != null) {
+            projeto = extras.getSerializable("Projeto") as Projeto
+            // and get whatever type user account id is
+        }
 
         setContentView(R.layout.detalhes_projeto_activity)
 
