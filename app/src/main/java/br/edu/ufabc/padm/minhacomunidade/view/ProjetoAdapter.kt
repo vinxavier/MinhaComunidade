@@ -1,11 +1,14 @@
 package br.edu.ufabc.padm.minhacomunidade.view
 
 import android.content.Context
+import android.content.Intent
 import android.view.*
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.ufabc.padm.minhacomunidade.App
 import br.edu.ufabc.padm.minhacomunidade.R
 import br.edu.ufabc.padm.minhacomunidade.model.dao.ProjetoDAO
 
@@ -41,6 +44,13 @@ class ProjetoAdapter : RecyclerView.Adapter<ProjetoAdapter.ProjetoHolder>() {
         holder.perc.progress = projeto.vol*100/projeto.minVol
         holder.lperc.text = (projeto.vol*100/projeto.minVol).toString() + "%"
         holder.currP.text = projeto.vol.toString()+" / " + projeto.minVol.toString()
+        holder.itemView.setOnClickListener {
+
+            //it.context.startActivity(Intent(it.context,DetalheProjetoActivity::class.java).putExtra("Projeto", ProjetoDAO.instance.getItemAt(position)))
+            startActivity(it.context,Intent(it.context,DetalheProjetoActivity::class.java).putExtra("Projeto", ProjetoDAO.instance.getItemAt(position)),null)
+        }
+
+
     }
 
     override fun getItemId(p0: Int): Long {

@@ -94,18 +94,7 @@ class FeedActivity:AppCompatActivity() {
         super.onResume()
 
         recyclerView.adapter!!.notifyDataSetChanged()
-
-        recyclerView.addOnItemClickListener(object: OnItemClickListener{
-
-
-            override fun onItemClicked(position: Int, view: View) {
-
-                val projeto = ProjetoDAO.getItemAt(position)
-                iniciarActivity(projeto)
-
-            }
-        })
-
+        
 
         addButton.setOnClickListener{
             val intent = Intent(this, NovoProjeto1Activity::class.java)
